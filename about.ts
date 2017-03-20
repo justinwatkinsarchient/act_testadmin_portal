@@ -1,10 +1,12 @@
 import * as angular from 'angular';
+import template from './about.html!text';
 
-export var Component  = <angular.IComponentOptions> {
-    controller: AboutController,
-    template: '<h1>About</h1><div ui-view></div>'
-}
-
+/**
+ * 
+ * 
+ * @class AboutController
+ * @implements {ng.IComponentController}
+ */
 class AboutController implements ng.IComponentController {
     static $inject = [];
     constructor() {
@@ -12,4 +14,13 @@ class AboutController implements ng.IComponentController {
     }
 }
 
-export var Name = 'about';
+
+/**
+ * Main Component reference
+ */
+export var Component  = <angular.IComponentOptions> {
+    controller: AboutController,
+    template: template
+}
+
+export var Name = 'testadmin.about';
